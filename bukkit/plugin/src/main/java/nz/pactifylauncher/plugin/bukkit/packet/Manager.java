@@ -19,8 +19,8 @@ public class Manager {
 
         PLSPPacketPopupAlert p = new PLSPPacketPopupAlert(notchianChatComponent1, notchianChatComponent2);
 
-        PLSPMessenger plspMessenger = new PLSPMessenger(PactifyPlugin);
-
+        PLSPMessenger plspMessenger = new PLSPMessenger(PactifyPlugin.getPp());
+        plspMessenger.sendPLSPMessage(player, p);
 
     }
 

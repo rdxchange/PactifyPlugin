@@ -2,6 +2,7 @@ package nz.pactifylauncher.plugin.bukkit.command;
 
 import lombok.RequiredArgsConstructor;
 import nz.pactifylauncher.plugin.bukkit.PactifyPlugin;
+import nz.pactifylauncher.plugin.bukkit.packet.Manager;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -19,6 +20,7 @@ public class CheckCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length == 0) {
             sender.sendMessage(ChatColor.RED + "Usage: /pacheck <player>");
+            Manager.create((Player) sender);
             return true;
         }
 

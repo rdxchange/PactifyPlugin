@@ -12,6 +12,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class PactifyPlugin extends JavaPlugin implements PactifyAPI.Impl {
     private final @Getter PLSPMessenger plspMessenger = new PLSPMessenger(this);
     private final @Getter PPlayersService playersService = new PPlayersService(this);
+    public static PactifyPlugin pp;
 
     @Override
     public void onLoad() {
@@ -27,6 +28,7 @@ public class PactifyPlugin extends JavaPlugin implements PactifyAPI.Impl {
 
     @Override
     public void onEnable() {
+        pp = this;
         plspMessenger.enable();
         playersService.enable();
         registerCommands();
@@ -44,5 +46,13 @@ public class PactifyPlugin extends JavaPlugin implements PactifyAPI.Impl {
         getCommand("pactifycheck").setExecutor(new CheckCommand(this));
         getCommand("pactifylist").setExecutor(new ListCommand(this));
         getCommand("pactifystats").setExecutor(new StatsCommand(this));
+    }
+
+    public PLSPMessenger getPlspMessenger() {
+        return plspMessenger;
+    }
+
+    public static PactifyPlugin getPp() {
+        return pp;
     }
 }
