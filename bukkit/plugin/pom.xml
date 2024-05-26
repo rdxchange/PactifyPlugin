@@ -29,6 +29,12 @@
             <scope>compile</scope>
         </dependency>
         <dependency>
+            <groupId>nz.az-launcher</groupId>
+            <artifactId>plsp-protocol</artifactId>
+            <version>20240524</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.8.8-R0.1-SNAPSHOT</version>

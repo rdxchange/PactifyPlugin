@@ -94,9 +94,6 @@ public class PPlayersService implements PlayersService, Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         PPactifyPlayer pactifyPlayer = getPlayer(event.getPlayer());
         pactifyPlayer.join();
-        pactifyPlayer.doJoinActions(pactifyPlayer.hasLauncher()
-                ? plugin.getConf().getLoginWithPactify()
-                : plugin.getConf().getLoginWithoutPactify());
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
